@@ -18,11 +18,11 @@ export default function Card({ setActivePopup, setSelectedUser, user }: Props) {
       <h2>{user.name}</h2>
       <div className={styles.contacts}>
         <div>
-          <img className={styles.phone} src="/phone.png" alt="phone" />
+          <div className={styles.phone}></div>
           <p>{user.phone}</p>
         </div>
         <div>
-          <img className={styles.email} src="/email.png" alt="email" />
+          <div className={styles.email}></div>
           <p>{user.email}</p>
         </div>
       </div>

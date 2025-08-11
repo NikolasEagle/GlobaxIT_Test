@@ -11,9 +11,8 @@ export default function SearchField({ searchFunc }: Props) {
         onChange={(event) => searchFunc(event.target.value)}
         className={styles.search_input}
       />
-      <div className={styles.search_icon_wrapper}>
-        <img className={styles.search_icon} src="/search.png" alt="search" />
-      </div>
+
+      <div className={styles.search_icon}></div>
     </div>
   );
 }
