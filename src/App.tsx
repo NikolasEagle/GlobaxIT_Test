@@ -1,10 +1,32 @@
 import styles from "./App.module.scss";
 import SearchField from "./components/SearchField";
 import CardsPanel from "./components/CardsPanel";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+export interface User {
+  id: number;
+
+  name: string;
+
+  phone: string;
+
+  email: string;
+
+  address: string;
+
+  position_name: string;
+
+  departament: string;
+
+  hire_date: string;
+}
+
+export interface Info {
+  data: User[];
+}
 
 export default function App() {
-  const [content, setContent] = useState<React.JSX.Element>();
+  const [content, setContent] = useState<Info | null>(null);
 
   const [searchValue, setSearchValue] = useState<string>("");
 
@@ -21,6 +43,10 @@ export default function App() {
       console.error(error);
     }
   };
+
+  useEffect(() => {
+    search("");
+  }, []);
 
   return (
     <div className={styles.home}>

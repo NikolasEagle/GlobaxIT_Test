@@ -1,10 +1,16 @@
-import React from "react";
 import styles from "./CardsPanel.module.scss";
+import { Info } from "../App";
+import Card from "./Card";
 
 interface Props {
-  content: React.JSX.Element;
+  content: Info;
 }
 
-export default function CardsPanel({content}: Props) {
-  return <div className={styles.panel}></div>;
+export default function CardsPanel({ content }: Props) {
+  return (
+    <div className={styles.panel}>
+      {content &&
+        content.data.map((_, index) => <Card user={content.data[index]} />)}
+    </div>
+  );
 }
