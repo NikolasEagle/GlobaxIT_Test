@@ -1,5 +1,41 @@
 .card {
   width: 357px;
   width: 314px;
-  box-shadow: 0 12px 12px #8189a3;
+  box-shadow: 0 0px 8px #8189a3;
+  border: none;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  h2 {
+    margin: 0;
+    color: #262c40;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color: #8189a3;
+    div {
+      display: flex;
+      gap: 14px;
+      flex-direction: row;
+      align-items: center;
+      .phone {
+        width: 14px;
+        height: 24px;
+      }
+      .email {
+        width: 24px;
+        height: 14px;
+      }
+      p {
+        margin: 0;
+        font-size: 14;
+      }
+    }
+  }
 }
