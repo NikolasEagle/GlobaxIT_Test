@@ -1,6 +1,16 @@
 import styles from "./SearchField.module.scss";
 
-export default function SearchField() {
+interface Props {
+  searchFunc: (query: string) => Promise<void>;
+  searchValue: string;
+  setSearchValue: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export default function SearchField({
+  searchFunc,
+  searchValue,
+  setSearchValue,
+}: Props) {
   return (
     <div className={styles.search}>
       <input className={styles.search_input} />

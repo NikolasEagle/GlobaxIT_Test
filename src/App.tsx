@@ -4,7 +4,7 @@ import CardsPanel from "./components/CardsPanel";
 import { useState } from "react";
 
 export default function App() {
-  const [content, setContent] = useState();
+  const [content, setContent] = useState<React.JSX.Element>();
 
   const [searchValue, setSearchValue] = useState<string>("");
 
