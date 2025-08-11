@@ -1,8 +1,7 @@
-import { useState } from "react";
-import styles from "./App.scss";
+import styles from "./App.module.scss";
 
 function App() {
-  return <main></main>;
+  return <div className={styles.home}></div>;
 }
 
 export default App;
