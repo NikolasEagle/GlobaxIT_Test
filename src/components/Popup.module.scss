@@ -10,6 +10,7 @@
 
   .popup {
     cursor: default;
+    box-shadow: 0 0 20px rgba($color: #000000, $alpha: 0.1);
     p {
       margin: 0;
     }
@@ -18,8 +19,7 @@
     border-radius: 16px;
     padding: 24px;
     background: #ffffff;
-    opacity: 1;
-    height: 550px;
+    height: max-content;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -54,11 +54,13 @@
       flex-direction: row;
       gap: 40px;
       .desc {
+        color: #262c40;
         display: flex;
         flex-direction: column;
         gap: 14px;
         p {
-          font-size: 18;
+          line-height: 24px;
+          font-size: 18px;
         }
       }
       .data {
@@ -67,7 +69,8 @@
         flex-direction: column;
         gap: 14px;
         p {
-          font-size: 16;
+          line-height: 18px;
+          font-size: 16px;
         }
       }
     }
@@ -76,14 +79,17 @@
       flex-direction: column;
       gap: 12px;
       desc {
+        color: #262c40;
         p {
-          font-size: 18;
+          line-height: 24px;
+          font-size: 18px;
         }
       }
       .data {
         color: #8189a3;
         p {
-          font-size: 16;
+          line-height: 18px;
+          font-size: 16px;
         }
       }
     }
