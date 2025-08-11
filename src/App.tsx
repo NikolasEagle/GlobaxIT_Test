@@ -17,7 +17,7 @@ export interface User {
 
   position_name: string;
 
-  departament: string;
+  department: string;
 
   hire_date: string;
 }
@@ -59,7 +59,12 @@ export default function App() {
         setSelectedUser={setSelectedUser}
         content={content}
       />
-      <Popup isActive={activePopup} user={selectedUser} />
+      <Popup
+        setActivePopup={setActivePopup}
+        setSelectedUser={setSelectedUser}
+        isActive={activePopup}
+        user={selectedUser}
+      />
     </div>
   );
 }

@@ -2,18 +2,33 @@ import { User } from "../App";
 import styles from "./Popup.module.scss";
 
 interface Props {
+  setActivePopup: React.Dispatch<React.SetStateAction<boolean>>;
+  setSelectedUser: React.Dispatch<React.SetStateAction<User | null>>;
   isActive: boolean;
   user: User | null;
 }
 
-export default function Popup({ isActive, user }: Props) {
+export default function Popup({
+  setSelectedUser,
+  setActivePopup,
+  isActive,
+  user,
+}: Props) {
+  const closePopup = (event) => {
+    setActivePopup(false);
+    setSelectedUser(null);
+  };
+
   return (
     isActive && (
-      <div className={styles.popup_shadow}>
-        <div className={styles.popup}>
+      <div className={styles.popup_shadow} onClick={closePopup}>
+        <div
+          onClick={(event) => event?.stopPropagation()}
+          className={styles.popup}
+        >
           <div className={styles.header}>
-            <h2>{user.name}</h2>
-            <div className={styles.close}></div>
+            <h2>{user?.name}</h2>
+            <div onClick={closePopup} className={styles.close}></div>
           </div>
           <div className={styles.info}>
             <div className={styles.desc}>
