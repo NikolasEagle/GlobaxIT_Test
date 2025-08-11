@@ -7,9 +7,14 @@ interface Props {
   user: User;
 }
 
-export default function Card({ user }: Props) {
+export default function Card({ setActivePopup, setSelectedUser, user }: Props) {
+  const openPopup = () => {
+    setSelectedUser(user);
+    setActivePopup(true);
+  };
+
   return (
-    <div className={styles.card}>
+    <div onClick={openPopup} className={styles.card}>
       <h2>{user.name}</h2>
       <div className={styles.contacts}>
         <div>
