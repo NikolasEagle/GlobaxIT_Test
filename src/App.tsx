@@ -54,7 +54,11 @@ export default function App() {
   return (
     <div className={styles.home}>
       <SearchField searchFunc={search} />
-      <CardsPanel content={content} />
+      <CardsPanel
+        setActivePopup={setActivePopup}
+        setSelectedUser={setSelectedUser}
+        content={content}
+      />
       <Popup isActive={activePopup} user={selectedUser} />
     </div>
   );
