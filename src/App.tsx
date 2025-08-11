@@ -2,6 +2,7 @@ import styles from "./App.module.scss";
 import SearchField from "./components/SearchField";
 import CardsPanel from "./components/CardsPanel";
 import { useEffect, useState } from "react";
+import Popup from "./components/Popup";
 
 export interface User {
   id: number;
@@ -28,7 +29,9 @@ export interface Info {
 export default function App() {
   const [content, setContent] = useState<Info | null>(null);
 
-  const [searchValue, setSearchValue] = useState<string>("");
+  const [selectedUser, setSelectedUser] = useState<User | null>(null);
+
+  const [activePopup, setActivePopup] = useState<boolean>(false);
 
   const search = async (query: string): Promise<void> => {
     const url = "http://localhost:3000";
@@ -50,12 +53,9 @@ export default function App() {
 
   return (
     <div className={styles.home}>
-      <SearchField
-        searchFunc={search}
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
+      <SearchField searchFunc={search} />
       <CardsPanel content={content} />
+      <Popup isActive={activePopup} user={selectedUser} />
     </div>
   );
 }

@@ -3,7 +3,7 @@ import { Info } from "../App";
 import Card from "./Card";
 
 interface Props {
-  content: Info;
+  content: Info | null;
 }
 
 export default function CardsPanel({ content }: Props) {
